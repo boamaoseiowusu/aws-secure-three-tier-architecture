@@ -1,158 +1,171 @@
-# aws-secure-three-tier-architecture
-Built a secure three-tier AWS architecture using VPC, Public &amp; Private Subnets, Bastion Host, NAT Gateway, Apache Web Server, and Security Groups.
-AWS Secure Three-Tier Architecture
-Project Overview
+# AWS Secure Three-Tier Architecture
 
-This project demonstrates the deployment of a secure three-tier architecture in Amazon Web Services (AWS) using industry best practices.
+## Project Overview
 
-The environment was designed to simulate a production-ready network where public-facing resources are separated from backend application servers through multiple security layers.
+This project demonstrates the implementation of a secure AWS Three-Tier Architecture using industry best practices.
 
-The architecture includes:
+The environment consists of:
 
-Virtual Private Cloud (VPC)
-Public and Private Subnets
+- Public Subnet
+- Private Subnet
+- Bastion Host
+- Private Web Server
+- NAT Gateway
+- Internet Gateway
+- Security Groups
+- Route Tables
+- Amazon Linux 2023
+- Apache HTTP Server
+
+The objective of this project is to demonstrate secure cloud networking, network segmentation, and secure administration of private resources within AWS.
+
+---
+
+# Architecture Diagram
+
+![Architecture Diagram](architecture/aws-three-tier-architecture.png)
+
+---
+
+# Architecture
+
+```
+Internet
+    │
+    ▼
 Internet Gateway
-NAT Gateway
-Bastion Host
-Private EC2 Web Server
-Route Tables
-Security Groups
-Apache Web Server
-Architecture
-
-(Insert your architecture diagram here once we create it.)
-
-Technologies Used
-Amazon EC2
-Amazon VPC
-Internet Gateway
-NAT Gateway
-Route Tables
-Security Groups
-Amazon Linux 2023
-Apache HTTP Server
-SSH
-GitHub
-Architecture Components
-Public Tier
-Bastion Host
-Internet Gateway
-Public Route Table
-
-Purpose:
-
-Provides secure administrative access to the private network.
-
-Private Tier
-
-Private EC2 Server
-
-Apache Web Server
-
-Purpose:
-
-Hosts the application while remaining inaccessible from the Internet.
-
-Networking
-Custom VPC
+    │
+    ▼
 Public Subnet
+    │
+    ├── Bastion Host
+    │
+    └── NAT Gateway
+              │
+              ▼
 Private Subnet
-NAT Gateway
-Route Tables
-Security
+       │
+       ▼
+Apache Web Server
+```
 
-Implemented security best practices including:
+---
 
-SSH restricted through Security Groups
-Private server inaccessible from the Internet
-Bastion Host used as secure jump server
-Private subnet outbound Internet through NAT Gateway
-Principle of least privilege
-Deployment Steps
-Step 1
+# Technologies Used
 
-Created a custom VPC.
+- Amazon EC2
+- Amazon VPC
+- Internet Gateway
+- NAT Gateway
+- Route Tables
+- Security Groups
+- Amazon Linux 2023
+- Apache
+- SSH
 
-Step 2
+---
 
-Created Public and Private Subnets.
+# Project Screenshots
 
-Step 3
+## VPC Overview
 
-Attached an Internet Gateway.
+![VPC](screenshots/01-vpc-overview.png)
 
-Step 4
+---
 
-Configured Route Tables.
+## Public and Private Subnets
 
-Step 5
+![Subnets](screenshots/02-public-private-subnets.png)
 
-Created a NAT Gateway.
+---
 
-Step 6
+## Internet Gateway
 
-Launched Bastion Host.
+![IGW](screenshots/03-internet-gateway.png)
 
-Step 7
+---
 
-Launched Private EC2 Instance.
+## Public Route Table
 
-Step 8
+![Public Route Table](screenshots/04-public-route-table.png)
 
-Configured Security Groups.
+---
 
-Step 9
+## Private Route Table
 
-Installed Apache.
+![Private Route Table](screenshots/06-private-route-table.png)
 
-Step 10
+---
 
-Verified application using localhost.
+## NAT Gateway
 
-Screenshots
-Step	Screenshot
-VPC	screenshots/01-vpc-overview.png
-Subnets	screenshots/02-public-private-subnets.png
-Internet Gateway	screenshots/03-internet-gateway.png
-Public Route Table	screenshots/04-public-route-table.png
-Route Association	screenshots/05-public-route-association.png
-Private Route Table	screenshots/06-private-route-table.png
-Private Route Association	screenshots/07-private-route-association.png
-NAT Gateway	screenshots/08-nat-gateway.png
-EC2 Instances	screenshots/09-ec2-instances.png
-Security Groups	screenshots/10-security-groups.png
-Apache Running	screenshots/11-apache-running.png
-Custom Web Page	screenshots/12-custom-webpage.png
-Resource Map	screenshots/13-resource-map.png
-Skills Demonstrated
-AWS Networking
-VPC Design
-Cloud Security
-EC2 Administration
-Linux Administration
-SSH
-Apache Configuration
-Infrastructure Design
-Troubleshooting
-Cloud Architecture
-Learning Summary
+![NAT Gateway](screenshots/08-nat-gateway.png)
 
-During this project I learned how enterprise AWS environments isolate public and private workloads using VPC networking. I configured secure routing, deployed a Bastion Host for administrative access, implemented a NAT Gateway for outbound connectivity, and installed Apache on a private EC2 instance. This project strengthened my understanding of cloud networking, Linux administration, and AWS security best practices.
+---
 
-Future Improvements
-Application Load Balancer
-Auto Scaling Group
-RDS Database
-CloudWatch Monitoring
-AWS Systems Manager
-AWS WAF
-Route53
-SSL/TLS
-CloudFront
-Created By
+## EC2 Instances
 
-Boama Osei-Owusu
+![EC2](screenshots/09-ec2-instances.png)
 
-AWS Cloud Portfolio
+---
 
-Dallas, Texas
+## Security Groups
+
+![Security Groups](screenshots/10-security-groups.png)
+
+---
+
+## Apache Running
+
+![Apache](screenshots/11-apache-running.png)
+
+---
+
+## Custom Web Page
+
+![Website](screenshots/12-custom-webpage.png)
+
+---
+
+# Skills Demonstrated
+
+- AWS Networking
+- Cloud Security
+- Amazon VPC
+- Bastion Host Administration
+- Linux Administration
+- Apache Web Server
+- NAT Gateway
+- Internet Gateway
+- Route Tables
+- Security Groups
+- SSH
+- Public & Private Networking
+
+---
+
+# Lessons Learned
+
+During this project I learned how to:
+
+- Build a secure VPC architecture
+- Configure Public and Private Subnets
+- Implement Bastion Host administration
+- Configure NAT Gateway for outbound Internet access
+- Secure EC2 instances using Security Groups
+- Configure Apache on Amazon Linux 2023
+- Troubleshoot Linux and AWS networking
+- Connect securely to private instances through SSH
+
+---
+
+# Author
+
+## Boama Osei-Owusu
+
+CompTIA Security+ | CompTIA Cloud+ | AWS Cloud Projects | U.S. Army Reserve | Secret Clearance
+
+LinkedIn:
+
+https://www.linkedin.com/in/boama-osei-owusu-526628b5
+
